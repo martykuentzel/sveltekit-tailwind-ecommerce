@@ -185,7 +185,7 @@
     "esbuild" "^0.14.42"
     "worktop" "0.8.0-next.14"
 
-"@sveltejs/adapter-netlify@1.0.0-next.66":
+"@sveltejs/adapter-netlify@^1.0.0-next.66", "@sveltejs/adapter-netlify@1.0.0-next.66":
   "integrity" "sha512-UypTRnTd+R1O6SaDdc8l3A3c9/mQF8xLNoVb3Ay5ipb7uPU5WmjVYjfLVGyeVy67gztFfeFC/9Esu4OI2Ayx1A=="
   "resolved" "https://registry.npmjs.org/@sveltejs/adapter-netlify/-/adapter-netlify-1.0.0-next.66.tgz"
   "version" "1.0.0-next.66"
