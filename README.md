@@ -6,7 +6,7 @@ An Open Source Ecommerce Shop build with awesome [Sveltekit](https://kit.svelte.
 ![Javascript](https://img.shields.io/badge/Javascript-black)
 ![Svelte](https://img.shields.io/badge/Svelte-black)
 
-[Check out the Demo](https://master--nimble-zabaione-e0b961.netlify.app/)  
+## [Check out the Demo](https://master--nimble-zabaione-e0b961.netlify.app/)  
   
 ![Alt text](./shop-screenshot.png)
 
