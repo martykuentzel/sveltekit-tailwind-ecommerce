@@ -16,7 +16,7 @@
 </script>
 
 <div class="text-center">
-	<div class="p-12 text-7xl w-screen text-white font-snack tracking-wider bg-black">
+	<div class="p-12 text-4xl w-screen text-white font-snack tracking-wider bg-black">
 		Quality Stainless Steel made in Berlin
 	</div>
 	<div class="pt-8">
