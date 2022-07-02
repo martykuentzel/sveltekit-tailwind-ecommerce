@@ -5,6 +5,8 @@ Opensource Ecommerce Shop build with awesome Sveltekit and Tailwind CSS
 ![Branch stable](https://img.shields.io/badge/stable%20branch-master-black.svg)
 ![Typescript](https://img.shields.io/badge/Javascript-black)
 
+Check the [Demo](https://master--nimble-zabaione-e0b961.netlify.app/)  
+  
 ![Alt text](./shop-screenshot.png)
 
 # Features
@@ -34,7 +36,8 @@ cd sveltekit-tailwind-ecommerce
 npm install
 npm dev run
 ```
-or
+or  
+  
 <a href="https://app.netlify.com/start/deploy?repository=https://github.com/martykuentzel/sveltekit-tailwind-ecommerce">
 <img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to netlify">
 </a>
