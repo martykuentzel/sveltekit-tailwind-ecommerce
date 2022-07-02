@@ -16,10 +16,10 @@
 </script>
 
 <div class="text-center">
-	<div class="p-12 text-4xl w-screen text-white font-snack bg-black">
+	<div class="p-12 text-7xl w-screen text-white font-snack tracking-wider bg-black">
 		Quality Stainless Steel made in Berlin
 	</div>
-	<div class="p-8">
+	<div class="pt-8">
 		<div class="text-2xl">{$t('home.bestseller_title')}</div>
 		<ProductList products={besteller} />
 	</div>
