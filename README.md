@@ -5,7 +5,7 @@ Opensource Ecommerce Shop build with awesome Sveltekit and Tailwind CSS
 ![Branch stable](https://img.shields.io/badge/stable%20branch-master-black.svg)
 ![Typescript](https://img.shields.io/badge/Javascript-black)
 
-Check the [Demo](https://master--nimble-zabaione-e0b961.netlify.app/)  
+[Check out the Demo](https://master--nimble-zabaione-e0b961.netlify.app/)  
   
 ![Alt text](./shop-screenshot.png)
 
