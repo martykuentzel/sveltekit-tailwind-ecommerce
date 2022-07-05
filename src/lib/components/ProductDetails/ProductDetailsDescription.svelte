@@ -2,6 +2,7 @@
 	import PlusMinusCounter from '../../ui/PlusMinusCounter.svelte';
 	import addToCart from '$lib/utils/addToCart.js';
 	import { t, locale } from '$lib/i18n/i18n.js';
+	import { toast } from '@zerodevx/svelte-toast';
 
 	export let product;
 	let qty = 1;
@@ -24,7 +25,13 @@
 		{product.description[$locale]}
 	</div>
 	<div class="py-8">
-		<button class="w-full button" on:click={addToCart(product, qty)}>
+		<button
+			class="w-full button"
+			on:click={() => {
+				addToCart(product, qty);
+				toast.push(`added ${product.title[$locale]} to Cart`);
+			}}
+		>
 			{$t('button.add_to_cart')}
 		</button>
 	</div>

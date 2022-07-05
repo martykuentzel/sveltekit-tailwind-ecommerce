@@ -11,6 +11,7 @@
 	import { IsShippingAddressValid } from '../../../stores/ShippingAddress.js';
 	import { IsBillingAddressValid } from '../../../stores/BillingAddress.js';
 	import { t } from '$lib/i18n/i18n.js';
+	import { toast } from '@zerodevx/svelte-toast';
 
 	export let activeTab = 'content';
 
@@ -62,6 +63,8 @@
 				on:click={() => {
 					if ($IsShippingAddressValid) {
 						handleTab('billingAddress');
+					} else {
+						toast.push('please fill out shipping address first');
 					}
 				}}
 			>
@@ -74,6 +77,8 @@
 				on:click={() => {
 					if ($IsBillingAddressValid && $IsShippingAddressValid) {
 						handleTab('payment');
+					} else {
+						toast.push('please fill out shipping address and billingaddress first');
 					}
 				}}
 			>
@@ -86,6 +91,8 @@
 				on:click={() => {
 					if ($IsBillingAddressValid && $IsShippingAddressValid) {
 						handleTab('confirmation');
+					} else {
+						toast.push('please fill out shipping address and billingaddress first');
 					}
 				}}
 			>
@@ -148,7 +155,7 @@
 				{/if}
 			</div>
 		{:else}
-			<div class="pl-14 text-xl xl:text-xl"> 	{$t('cartdetails.empty_cart')} </div>
+			<div class="pl-14 text-xl xl:text-xl">{$t('cartdetails.empty_cart')}</div>
 		{/if}
 	</div>
 </Drawer>
