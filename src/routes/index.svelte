@@ -1,7 +1,4 @@
 <script context="module">
-	import ProductList from '$lib/components/ProductList/ProductList.svelte';
-	import { t } from '$lib/i18n/i18n.js';
-
 	export const prerender = true;
 	export async function load({ fetch }) {
 		const res = await fetch(`/products.json`);
@@ -11,6 +8,8 @@
 </script>
 
 <script>
+	import ProductList from '$lib/components/ProductList/ProductList.svelte';
+	import { t } from '$lib/i18n/i18n.js';
 	export let products;
 	const besteller = products.filter((product) => product.tags.includes('bestseller'));
 </script>
