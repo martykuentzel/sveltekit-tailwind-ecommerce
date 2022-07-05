@@ -29,7 +29,7 @@
 			class="w-full button"
 			on:click={() => {
 				addToCart(product, qty);
-				toast.push(`added ${product.title[$locale]} to Cart`);
+				toast.push(`${product.title[$locale]} ${$t('button.add_to_cart')}`);
 			}}
 		>
 			{$t('button.add_to_cart')}

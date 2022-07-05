@@ -64,7 +64,7 @@
 					if ($IsShippingAddressValid) {
 						handleTab('billingAddress');
 					} else {
-						toast.push('please fill out shipping address first');
+						toast.push($t('toast.shipping_address_invalid'));
 					}
 				}}
 			>
@@ -78,7 +78,7 @@
 					if ($IsBillingAddressValid && $IsShippingAddressValid) {
 						handleTab('payment');
 					} else {
-						toast.push('please fill out shipping address and billingaddress first');
+						toast.push($t('toast.shipping_and_billing_address_invalid'));
 					}
 				}}
 			>
@@ -92,7 +92,7 @@
 					if ($IsBillingAddressValid && $IsShippingAddressValid) {
 						handleTab('confirmation');
 					} else {
-						toast.push('please fill out shipping address and billingaddress first');
+						toast.push($t('toast.shipping_and_billing_address_invalid'));
 					}
 				}}
 			>

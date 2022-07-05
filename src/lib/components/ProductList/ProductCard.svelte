@@ -23,7 +23,7 @@
 			class="group-scope cursor-pointer badge hover:visible"
 			on:click={() => {
 				addToCart(product, 1);
-				toast.push(`added ${product.title[$locale]} to Cart`);
+				toast.push(`${product.title[$locale]} ${$t('button.add_to_cart')}`);
 			}}
 		>
 			<svg
