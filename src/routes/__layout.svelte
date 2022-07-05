@@ -26,7 +26,7 @@
 	});
 </script>
 
-<SvelteToast />
+<SvelteToast options={{ reversed: true, intro: { x: -192 } }} />
 
 <header class="bg-black">
 	<AppBar />
@@ -42,5 +42,6 @@
 	:root {
 		--toastBackground: #000;
 		--toastBarBackground: #b9b9b9;
+		--toastContainerRight: auto;
 	}
 </style>
