@@ -98,7 +98,7 @@
 				{$t('cartdetails.tab.confirmation')}
 			</div>
 			<!-- close button-->
-			<div class="ml-auto pb-1 pr-14 duration-100 z-50 hover:scale-110 -mt-8">
+			<div class="ml-auto pb-1 pr-14 duration-100 z-50 hover:scale-110">
 				<svg
 					in:scale|local={{ duration: 200, start: 1.5, opacity: 1, easing: expoIn }}
 					class="h-12 w-12 bg-black rounded-full p-2"
