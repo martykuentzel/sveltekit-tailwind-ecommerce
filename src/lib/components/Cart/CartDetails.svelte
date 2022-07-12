@@ -56,9 +56,11 @@
 				{$t('cartdetails.tab.shipping_address')}
 			</div>
 			<div
-				class="pb-4 px-14 lg:px-8 cursor-pointer hover:text-black {activeTab == 'billingAddress'
+				class="pb-4 px-14 lg:px-8 cursor-pointer {activeTab == 'billingAddress'
 					? 'text-black lg:border-b-4 lg:border-black z-50'
 					: 'hidden lg:flex'}"
+				class:italic={!$IsShippingAddressValid}
+				class:hover:text-black={$IsShippingAddressValid}
 				on:click={() => {
 					if ($IsShippingAddressValid) {
 						handleTab('billingAddress');
@@ -68,9 +70,11 @@
 				{$t('cartdetails.tab.billing_address')}
 			</div>
 			<div
-				class="pb-4 px-14 lg:px-8 hover:text-black {activeTab == 'payment'
+				class="pb-4 px-14 lg:px-8  {activeTab == 'payment'
 					? 'text-black lg:border-b-4 lg:border-black z-50'
 					: 'hidden lg:flex'}"
+				class:italic={!$IsBillingAddressValid || !$IsShippingAddressValid}
+				class:hover:text-black={$IsBillingAddressValid && $IsShippingAddressValid}
 				on:click={() => {
 					if ($IsBillingAddressValid && $IsShippingAddressValid) {
 						handleTab('payment');
@@ -80,9 +84,11 @@
 				{$t('cartdetails.tab.payment')}
 			</div>
 			<div
-				class="pb-4 px-14 lg:px-8 hover:text-black {activeTab == 'confirmation'
+				class="pb-4 px-14 lg:px-8  {activeTab == 'confirmation'
 					? 'text-black lg:border-b-4 lg:border-black z-50'
 					: 'hidden lg:flex'}"
+				class:italic={!$IsBillingAddressValid || !$IsShippingAddressValid}
+				class:hover:text-black={$IsBillingAddressValid && $IsShippingAddressValid}
 				on:click={() => {
 					if ($IsBillingAddressValid && $IsShippingAddressValid) {
 						handleTab('confirmation');
@@ -148,7 +154,7 @@
 				{/if}
 			</div>
 		{:else}
-			<div class="pl-14 text-xl xl:text-xl"> 	{$t('cartdetails.empty_cart')} </div>
+			<div class="pl-14 text-xl xl:text-xl">{$t('cartdetails.empty_cart')}</div>
 		{/if}
 	</div>
 </Drawer>
