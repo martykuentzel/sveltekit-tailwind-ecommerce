@@ -38,7 +38,7 @@ An Open Source Ecommerce Shop build with awesome [Sveltekit](https://kit.svelte.
 git clone https://github.com/martykuentzel/sveltekit-tailwind-ecommerce.git
 cd sveltekit-tailwind-ecommerce
 npm install
-npm dev run
+npm run dev
 
 ```
   
