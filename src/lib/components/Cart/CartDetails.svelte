@@ -11,6 +11,7 @@
 	import { IsShippingAddressValid } from '../../../stores/ShippingAddress.js';
 	import { IsBillingAddressValid } from '../../../stores/BillingAddress.js';
 	import { t } from '$lib/i18n/i18n.js';
+	import { toast } from '@zerodevx/svelte-toast';
 
 	export let activeTab = 'content';
 
@@ -64,6 +65,8 @@
 				on:click={() => {
 					if ($IsShippingAddressValid) {
 						handleTab('billingAddress');
+					} else {
+						toast.push($t('toast.shipping_address_invalid'));
 					}
 				}}
 			>
@@ -78,6 +81,8 @@
 				on:click={() => {
 					if ($IsBillingAddressValid && $IsShippingAddressValid) {
 						handleTab('payment');
+					} else {
+						toast.push($t('toast.shipping_and_billing_address_invalid'));
 					}
 				}}
 			>
@@ -92,6 +97,8 @@
 				on:click={() => {
 					if ($IsBillingAddressValid && $IsShippingAddressValid) {
 						handleTab('confirmation');
+					} else {
+						toast.push($t('toast.shipping_and_billing_address_invalid'));
 					}
 				}}
 			>

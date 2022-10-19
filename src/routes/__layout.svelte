@@ -5,6 +5,7 @@
 	import { Cart } from '../stores/Cart.js';
 	import { onMount } from 'svelte';
 	import { init } from 'svelte-i18n';
+	import { SvelteToast } from '@zerodevx/svelte-toast';
 	let cart;
 
 	onMount(() => {
@@ -25,6 +26,8 @@
 	});
 </script>
 
+<SvelteToast options={{ reversed: true, intro: { x: -192 } }} />
+
 <header class="bg-black">
 	<AppBar />
 </header>
@@ -34,3 +37,11 @@
 <footer>
 	<Footer />
 </footer>
+
+<style>
+	:root {
+		--toastBackground: #000;
+		--toastBarBackground: #b9b9b9;
+		--toastContainerRight: auto;
+	}
+</style>

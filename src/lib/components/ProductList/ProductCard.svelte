@@ -2,6 +2,7 @@
 	import addToCart from '$lib/utils/addToCart.js';
 	import { t, locale } from '$lib/i18n/i18n.js';
 	export let product;
+	import { toast } from '@zerodevx/svelte-toast';
 </script>
 
 <div class="group card min-h-80 text-center hover:shadow-lg hover:visible">
@@ -20,7 +21,10 @@
 	<div class="invisible group-hover:visible">
 		<div
 			class="group-scope cursor-pointer badge hover:visible"
-			on:click={() => addToCart(product, 1)}
+			on:click={() => {
+				addToCart(product, 1);
+				toast.push(`${product.title[$locale]} ${$t('button.add_to_cart')}`);
+			}}
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
