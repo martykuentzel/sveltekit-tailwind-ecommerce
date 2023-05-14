@@ -1,7 +1,4 @@
 <script>
-	import { onMount } from 'svelte';
-	import { browser } from '$app/env';
-
 	export let product;
 	let currentPreviewPictureSrc = product.images[0];
 	let currentPreviewPictureAlt = 0;
@@ -11,11 +8,21 @@
 		currentPreviewPictureAlt = img.target.alt;
 	};
 
-	onMount(async () => {
-		if (browser) {
-			await import('tw-elements');
+	const showArrowIcons = product.images.length > 1 ? true : false;
+	const nextPicture = (idx) => {
+		if (currentPreviewPictureAlt + 1 < product.images.length) {
+			currentPreviewPictureAlt += 1;
+		} else {
+			currentPreviewPictureAlt = 0;
 		}
-	});
+	};
+	const prevPicture = (idx) => {
+		if (currentPreviewPictureAlt > 0) {
+			currentPreviewPictureAlt -= 1;
+		} else {
+			currentPreviewPictureAlt = product.images.length - 1;
+		}
+	};
 </script>
 
 <div class="grid grid-cols-5">
@@ -33,57 +40,53 @@
 		{/each}
 	</div>
 
-	<div class="col-span-5 px-6 xl:col-span-4">
+	<div class="relative col-span-5 px-6 xl:col-span-4">
 		<img
-			src={currentPreviewPictureSrc}
-			class="object-contain max-h-[40rem] w-full sticky top-0 p-12 {product.images.length > 1
-				? 'hidden'
-				: ''} xl:flex"
+			src={product.images[currentPreviewPictureAlt]}
+			class="object-contain max-h-[40rem] w-full sticky top-0 p-12 xl:flex"
 			alt="product"
 			loading="lazy"
 			id="expandedImg"
 		/>
 
 		<div
-			id="carouselExampleControls"
-			class="carousel slide relative carousel-dark {product.images.length > 1
-				? ''
-				: 'hidden'} xl:hidden"
-			data-bs-ride="carousel"
+			class="absolute top-0 bottom-0 items-center justify-center left-0 ml-8 cursor-pointer hover:scale-125 xl:hidden {showArrowIcons
+				? 'flex'
+				: 'hidden'}"
+			on:click={prevPicture(currentPreviewPictureAlt)}
 		>
-			<div class="carousel-inner relative w-full overflow-hidden">
-				{#each product.images as img, idx}
-					<div class="carousel-item relative float-left w-full {idx == 0 ? 'active' : ''}">
-						<img
-							src={img}
-							class="object-contain max-h-[40rem] w-full sticky top-0 p-12"
-							alt={idx}
-							loading="lazy"
-						/>
-					</div>
-				{/each}
-			</div>
-			<button
-				class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
-				type="button"
-				data-bs-target="#carouselExampleControls"
-				data-bs-slide="prev"
-			>
-				<span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true" />
-				<span class="visually-hidden">Previous</span>
-			</button>
-			<button
-				class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
-				type="button"
-				data-bs-target="#carouselExampleControls"
-				data-bs-slide="next"
-			>
-				<span class="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true" />
-				<span class="visually-hidden">Next</span>
-			</button>
+			<span class="inline-block h-8 w-8">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width="1.5"
+					stroke="currentColor"
+					class="h-6 w-6"
+				>
+					<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+				</svg>
+			</span>
+		</div>
+
+		<div
+			class="absolute top-0 bottom-0 items-center justify-center right-0 mr-8 cursor-pointer hover:scale-125 xl:hidden {showArrowIcons
+				? 'flex'
+				: 'hidden'}"
+			on:click={nextPicture(currentPreviewPictureAlt)}
+		>
+			<span class="inline-block h-8 w-8">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width="1.5"
+					stroke="currentColor"
+					class="h-6 w-6"
+				>
+					<path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+				</svg>
+			</span>
 		</div>
 	</div>
 </div>
-
-<style>
-</style>

@@ -39,6 +39,7 @@
 <Drawer isOpen={$IsCartOpen} on:clickAway={handleToggle}>
 	<div class="relative text-black">
 		<div class="flex items-center text-xl mt-14 cursor-pointer text-lightGray lg:pl-8 xl:text-2xl">
+			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<div
 				class="pb-4 px-14 lg:px-8 hover:text-black {activeTab == 'content'
 					? 'text-black lg:border-b-4 lg:border-black z-50'
@@ -47,6 +48,7 @@
 			>
 				{$t('cartdetails.tab.content')}
 			</div>
+			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<div
 				class="pb-4 px-14 lg:px-8 hover:text-black {activeTab == 'shippingAddress'
 					? 'text-black lg:border-b-4 lg:border-black z-50'
@@ -55,6 +57,7 @@
 			>
 				{$t('cartdetails.tab.shipping_address')}
 			</div>
+			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<div
 				class="pb-4 px-14 lg:px-8 cursor-pointer {activeTab == 'billingAddress'
 					? 'text-black lg:border-b-4 lg:border-black z-50'
@@ -69,8 +72,9 @@
 			>
 				{$t('cartdetails.tab.billing_address')}
 			</div>
+			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<div
-				class="pb-4 px-14 lg:px-8  {activeTab == 'payment'
+				class="pb-4 px-14 lg:px-8 {activeTab == 'payment'
 					? 'text-black lg:border-b-4 lg:border-black z-50'
 					: 'hidden lg:flex'}"
 				class:italic={!$IsBillingAddressValid || !$IsShippingAddressValid}
@@ -83,8 +87,9 @@
 			>
 				{$t('cartdetails.tab.payment')}
 			</div>
+			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<div
-				class="pb-4 px-14 lg:px-8  {activeTab == 'confirmation'
+				class="pb-4 px-14 lg:px-8 {activeTab == 'confirmation'
 					? 'text-black lg:border-b-4 lg:border-black z-50'
 					: 'hidden lg:flex'}"
 				class:italic={!$IsBillingAddressValid || !$IsShippingAddressValid}
@@ -99,6 +104,7 @@
 			</div>
 			<!-- close button-->
 			<div class="ml-auto pb-1 pr-14 duration-100 z-50 hover:scale-110">
+				<!-- svelte-ignore a11y-click-events-have-key-events -->
 				<svg
 					in:scale|local={{ duration: 200, start: 1.5, opacity: 1, easing: expoIn }}
 					class="h-12 w-12 bg-black rounded-full p-2"
@@ -158,6 +164,3 @@
 		{/if}
 	</div>
 </Drawer>
-
-<style>
-</style>

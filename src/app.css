@@ -1,3 +1,55 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+	font-family: Chivo;
+	font-weight: bold;
+	src: url('public/fonts/Chivo-Bold.ttf') format('truetype');
+}
+@font-face {
+	font-family: Chivo;
+	font-weight: lighter;
+	src: url('public/fonts/Chivo-Light.ttf') format('truetype');
+}
+@font-face {
+	font-family: Chivo;
+	src: url('public/fonts/Chivo-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: SnackBowl;
+	src: url('public/fonts/SnackBowl.otf') format('opentype');
+}
+
+@layer utilities {
+	input[type='number']::-webkit-inner-spin-button,
+	input[type='number']::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+}
+
+.card {
+	@apply rounded bg-white overflow-hidden relative;
+}
+
+.badge {
+	@apply absolute top-2 left-2 ml-auto text-black text-sm rounded-full;
+}
+
+.button {
+	@apply bg-black py-2 w-full text-white rounded duration-100 font-bold h-16 text-xl md:h-12 md:w-56 hover:scale-110 xl:text-2xl;
+}
+
+.secondary-button {
+	@apply bg-darkGray py-2 w-full text-white rounded duration-100 font-bold h-16 text-xl md:h-12 md:w-56 hover:scale-110 xl:text-2xl;
+}
+
+.input {
+	@apply w-full appearance-none text-xl border-b-2 md:h-12 lg:text-2xl focus:outline-none;
+}
+
+.error {
+	@apply pt-1 text-rose-600 text-xs italic;
+}

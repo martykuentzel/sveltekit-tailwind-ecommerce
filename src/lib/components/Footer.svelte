@@ -9,7 +9,7 @@
 	>
 		<!-- Logo and social links container -->
 		<div
-			class="flex flex-col items-center justify-between space-y-4 pb-6  px-8 md:space-y-6 md:flex-col md:space-y-0 md:items-start"
+			class="flex flex-col items-center justify-between space-y-4 pb-6 px-8 md:space-y-6 md:flex-col md:items-start"
 		>
 			<!-- Logo -->
 			<div class="text-3xl text-white">Blechbär</div>
@@ -54,6 +54,3 @@
 		<div class="text-white block">Copyright &copy; 2022, All Rights Reserved</div>
 	</div>
 </footer>
-
-<style>
-</style>

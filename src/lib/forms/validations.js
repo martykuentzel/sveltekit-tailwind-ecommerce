@@ -12,10 +12,7 @@ export const shippingSchema = object().shape({
 	company: string(),
 	streetAndNumber: string().required('Enter street and house number'),
 	additionalAddress: string(),
-	postalCode: number()
-		.nullable()
-		.typeError('Enter postal code')
-		.required('Enter postal code'),
+	postalCode: number().nullable().typeError('Enter postal code').required('Enter postal code'),
 	city: string().required('Enter a city')
 });
 
@@ -26,9 +23,6 @@ export const billingSchema = object().shape({
 	company: string(),
 	streetAndNumber: string().required('Enter a valid Email'),
 	additionalAddress: string(),
-	postalCode: number()
-		.nullable()
-		.typeError('Enter postal code')
-		.required('Enter postal code'),
+	postalCode: number().nullable().typeError('Enter postal code').required('Enter postal code'),
 	city: string().required('Enter a city')
 });

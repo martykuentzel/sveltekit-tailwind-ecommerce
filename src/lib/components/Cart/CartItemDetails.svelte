@@ -36,7 +36,7 @@
 	};
 </script>
 
-<div class="flex mt-8 grid grid-cols-5 items-center text-xl">
+<div class="grid mt-8 grid-cols-5 items-center text-xl">
 	<div class="flex col-span-4 items-center md:col-span-2">
 		<img
 			src={item.image}
@@ -60,6 +60,7 @@
 	<div class="hidden text-center md:block">
 		{Math.round(item.qty * item.price * 100) / 100}{item.currency}
 	</div>
+	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		class="h-10 w-10 bg-black rounded-full p-2 mr-2 cursor-pointer duration-100 ml-auto block hover:scale-125"
@@ -76,6 +77,3 @@
 		/>
 	</svg>
 </div>
-
-<style>
-</style>

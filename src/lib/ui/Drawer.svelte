@@ -34,7 +34,7 @@
 <aside>
 	<div class="fixed inset-0 w-full h-full z-50 overflow-hidden {isOpen ? 'visible' : 'invisible'}">
 		<div
-			class="w-screen h-full bg-black cursor-pointer duration-500 transition-opacity overflow-hidden  {isOpen
+			class="w-screen h-full bg-black cursor-pointer duration-500 transition-opacity overflow-hidden {isOpen
 				? 'opacity-70'
 				: 'opacity-0'}"
 			on:click={handleClickAway}

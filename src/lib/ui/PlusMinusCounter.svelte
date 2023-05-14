@@ -51,9 +51,9 @@
 		use:validator={counter}
 		bind:value={counter}
 		on:change={handleChange}
-        class="align-middle inline-block text-center border-2 border-lightGray w-10 h-8 text-sm xl:w-20 xl:text-xl"
+		class="align-middle inline-block text-center border-2 border-lightGray w-10 h-8 text-sm xl:w-20 xl:text-xl"
 		{min}
-        />
+	/>
 
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
