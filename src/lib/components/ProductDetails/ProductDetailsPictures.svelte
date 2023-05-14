@@ -8,7 +8,7 @@
 		currentPreviewPictureAlt = img.target.alt;
 	};
 
-	const showArrowIcons = product.images.length > 1 ? true : false
+	const showArrowIcons = product.images.length > 1 ? true : false;
 	const nextPicture = (idx) => {
 		if (currentPreviewPictureAlt + 1 < product.images.length) {
 			currentPreviewPictureAlt += 1;
@@ -50,7 +50,9 @@
 		/>
 
 		<div
-			class="absolute top-0 bottom-0 items-center justify-center left-0 ml-8 cursor-pointer hover:scale-125 xl:hidden {showArrowIcons ? 'flex' : 'hidden'}"
+			class="absolute top-0 bottom-0 items-center justify-center left-0 ml-8 cursor-pointer hover:scale-125 xl:hidden {showArrowIcons
+				? 'flex'
+				: 'hidden'}"
 			on:click={prevPicture(currentPreviewPictureAlt)}
 		>
 			<span class="inline-block h-8 w-8">
@@ -68,7 +70,9 @@
 		</div>
 
 		<div
-			class="absolute top-0 bottom-0 items-center justify-center right-0 mr-8 cursor-pointer hover:scale-125 xl:hidden {showArrowIcons ? 'flex' : 'hidden'}"
+			class="absolute top-0 bottom-0 items-center justify-center right-0 mr-8 cursor-pointer hover:scale-125 xl:hidden {showArrowIcons
+				? 'flex'
+				: 'hidden'}"
 			on:click={nextPicture(currentPreviewPictureAlt)}
 		>
 			<span class="inline-block h-8 w-8">
