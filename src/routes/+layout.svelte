@@ -1,13 +1,16 @@
 <script>
+	import '../app.css';
 	import AppBar from '$lib/components/AppBar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-	import '../styles/global.css';
 	import { Cart } from '../stores/Cart.js';
 	import { onMount } from 'svelte';
 	import { init } from 'svelte-i18n';
+	import { browser } from '$app/environment';
 	let cart;
 
-	onMount(() => {
+	export const prerender = true;
+
+	onMount(async () => {
 		// get cart details from localStorage
 		console.log('get cart details from localStorage');
 		cart = JSON.parse(localStorage.getItem('cart'));

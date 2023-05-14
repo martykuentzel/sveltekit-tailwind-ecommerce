@@ -6,8 +6,8 @@ An Open Source Ecommerce Shop build with awesome [Sveltekit](https://kit.svelte.
 ![Javascript](https://img.shields.io/badge/Javascript-black)
 ![Svelte](https://img.shields.io/badge/Svelte-black)
 
-## [Check out the Demo](https://master--nimble-zabaione-e0b961.netlify.app/)  
-  
+## [Check out the Demo](https://master--nimble-zabaione-e0b961.netlify.app/)
+
 ![Alt text](./shop-screenshot.png)
 
 # Features
@@ -20,10 +20,9 @@ An Open Source Ecommerce Shop build with awesome [Sveltekit](https://kit.svelte.
 - Nice intuitive Cart Design
 - Form Validation for shipping and billing with yup and svelte-forms-lib
 - Usage of Stores and localStorage
-- Carousel (Slider) for Products (visible in tablet screensize)
 - i18n implementation (English and German Language available)
 - Minimalistic Black and White UI Design
-  
+
 # Things that can be improved
 
 - better coloring and layout (I am not a good UI Designer)
@@ -41,7 +40,7 @@ npm install
 npm run dev
 
 ```
-  
+
 OR
 
 Just ...

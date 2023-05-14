@@ -6,12 +6,12 @@
 
 	export let FormStore;
 	export let onSubmit;
-    export let formSchema;
-    export let isShipping = true;
+	export let formSchema;
+	export let isShipping = true;
 	let dispatch = createEventDispatcher();
 	const handleBack = () => dispatch('back');
 
-	const {form, errors, handleChange, handleSubmit } = createForm({
+	const { form, errors, handleChange, handleSubmit } = createForm({
 		initialValues: $FormStore,
 		validationSchema: formSchema,
 		onSubmit: (values) => onSubmit(values)
@@ -34,25 +34,25 @@
 			error={$errors.familyName}
 			{handleChange}
 		/>
-        {#if isShipping}
-		<Input
-			name="email"
-			description={$t('form.input.email')}
-			value={$form.email}
-			error={$errors.email}
-			{handleChange}
-		/>
-		<Input
-			name="telephone"
-			description={$t('form.input.telephone')}
-			value={$form.telephone}
-			error={$errors.telephone}
-			{handleChange}
-		/>
-        {/if}
+		{#if isShipping}
+			<Input
+				name="email"
+				description={$t('form.input.email')}
+				value={$form.email}
+				error={$errors.email}
+				{handleChange}
+			/>
+			<Input
+				name="telephone"
+				description={$t('form.input.telephone')}
+				value={$form.telephone}
+				error={$errors.telephone}
+				{handleChange}
+			/>
+		{/if}
 		<div>
 			<label class="" for="country">{$t('form.input.country')}</label>
-			<div class="relative ">
+			<div class="relative">
 				<select
 					class="input cursor-pointer border-black"
 					id="country"
@@ -103,10 +103,18 @@
 			error={$errors.postalCode}
 			{handleChange}
 		/>
-		<Input name="city" description={$t('form.input.city')} value={$form.city} error={$errors.city} {handleChange} />
+		<Input
+			name="city"
+			description={$t('form.input.city')}
+			value={$form.city}
+			error={$errors.city}
+			{handleChange}
+		/>
 	</div>
 </form>
 <div class="pt-6 mb-24 md:mt-8">
 	<button class="secondary-button" on:click={handleBack}> {$t('button.back')} </button>
-	<button class="float-right button mt-2 md:mt-0" on:click={handleSubmit}> {$t('button.continue')} </button>
+	<button class="float-right button mt-2 md:mt-0" on:click={handleSubmit}>
+		{$t('button.continue')}
+	</button>
 </div>

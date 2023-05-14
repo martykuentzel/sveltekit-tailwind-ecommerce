@@ -13,7 +13,7 @@
 	$: cartNumber = $Cart.reduce((count, item) => count + item.qty, 0);
 </script>
 
-<CartDetails {$IsCartOpen} on:toggle={handleToggle} />
+<CartDetails on:toggle={handleToggle} />
 <!-- Navbar -->
 <svelte:window bind:scrollY={y} />
 <nav class="bg-black text-white container mx-auto p-4">
@@ -51,6 +51,7 @@
 			>
 		</div>
 		<!-- Cart Button -->
+		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<div
 			class="group cursor-pointer fixed top-12 right-12 z-50 ml-auto py-2 p-1 pr-2 items-center md:flex hover:visible"
 			class:active={$IsCartOpen}

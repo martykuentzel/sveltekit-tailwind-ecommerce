@@ -12,18 +12,18 @@
 
 	const toggle = () => {
 		IsBillingIdenticalWithShipping.set(!$IsBillingIdenticalWithShipping);
-		IsBillingAddressValid.set(false)
-		if ($IsBillingIdenticalWithShipping || billingSchema.isValidSync($BillingAddress)){
-			IsBillingAddressValid.set(true)
+		IsBillingAddressValid.set(false);
+		if ($IsBillingIdenticalWithShipping || billingSchema.isValidSync($BillingAddress)) {
+			IsBillingAddressValid.set(true);
 		}
-	}
+	};
 
 	let dispatch = createEventDispatcher();
 	const handleSubmit = (values) => {
 		console.log(JSON.stringify(values));
 		BillingAddress.set(values);
 		console.log('submitted');
-		IsBillingAddressValid.set(true)
+		IsBillingAddressValid.set(true);
 		handleNext();
 	};
 	const handleNext = () => {
@@ -36,7 +36,7 @@
 	{#if $IsBillingIdenticalWithShipping}
 		<div class="flex items-center">
 			<input
-				class="form-check-input appearance-none h-10 w-10 border-2 border-lightGray rounded transition duration-200 mr-2 cursor-pointer checked:bg-black checked:border-black focus:outline-none"
+				class="h-10 w-10 border-2 border-lightGray rounded transition duration-200 mr-2 cursor-pointer accent-black focus:outline-none"
 				on:click={toggle}
 				type="checkbox"
 				id="flexCheckDefault"
@@ -48,12 +48,14 @@
 		</div>
 		<div class="pt-6 mb-24 md:mt-8">
 			<button class="secondary-button" on:click={handleBack}> {$t('button.back')} </button>
-			<button class="float-right button mt-2 md:mt-0" on:click={handleNext}> {$t('button.continue')} </button>
+			<button class="float-right button mt-2 md:mt-0" on:click={handleNext}>
+				{$t('button.continue')}
+			</button>
 		</div>
 	{:else}
 		<div class="flex items-center">
 			<input
-				class="form-check-input appearance-none h-10 w-10 border-2 border-lightGray rounded transition duration-200 mr-2 cursor-pointer checked:bg-black checked:border-black focus:outline-none"
+				class="appearance-none h-10 w-10 border-2 border-lightGray rounded transition duration-200 mr-2 cursor-pointer checked:bg-black checked:border-black focus:outline-none"
 				on:click={toggle}
 				type="checkbox"
 				id="flexCheckDefault"
@@ -75,6 +77,3 @@
 		</div>
 	{/if}
 </div>
-
-<style>
-</style>

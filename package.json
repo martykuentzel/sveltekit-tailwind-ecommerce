@@ -1,34 +1,34 @@
 {
-  "name": "sveltekit-tailwind-ecommerce",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "svelte-kit dev",
-    "build": "svelte-kit build",
-    "package": "svelte-kit package",
-    "preview": "svelte-kit preview",
-    "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
-    "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
-  },
-  "devDependencies": {
-    "@rollup/plugin-json": "^4.1.0",
-    "@sveltejs/adapter-auto": "next",
-    "@sveltejs/adapter-netlify": "^1.0.0-next.65",
-    "@sveltejs/kit": "next",
-    "autoprefixer": "^10.4.7",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-svelte3": "^3.2.1",
-    "postcss": "^8.4.14",
-    "prettier": "^2.7.1",
-    "prettier-plugin-svelte": "^2.7.0",
-    "svelte": "^3.52.0",
-    "tailwindcss": "^3.1.8"
-  },
-  "type": "module",
-  "dependencies": {
-    "svelte-forms-lib": "^2.0.1",
-    "svelte-i18n": "^3.4.0",
-    "tw-elements": "^1.0.0-alpha12",
-    "yup": "^0.32.11"
-  }
+	"name": "sveltekit-tailwind-ecommerce",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
+		"lint": "prettier --plugin-search-dir . --check . && eslint .",
+		"format": "prettier --plugin-search-dir . --write ."
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^2.0.0",
+		"@sveltejs/adapter-netlify": "2.0.7",
+		"@sveltejs/kit": "^1.16.3",
+		"autoprefixer": "^10.4.14",
+		"eslint": "^8.28.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-svelte": "^2.26.0",
+		"postcss": "^8.4.23",
+		"prettier": "^2.8.0",
+		"prettier-plugin-svelte": "^2.8.1",
+		"svelte": "3.59.1",
+		"tailwindcss": "^3.3.2",
+		"vite": "^4.3.0"
+	},
+	"type": "module",
+	"dependencies": {
+		"svelte-forms-lib": "^2.0.1",
+		"svelte-i18n": "3.6.0",
+		"yup": "1.1.1"
+	}
 }

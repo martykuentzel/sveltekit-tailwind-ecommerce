@@ -18,10 +18,8 @@
 		<span class="block text-gray-500 text-sm"> {parseInt(product.price)}€</span>
 	</div>
 	<div class="invisible group-hover:visible">
-		<div
-			class="group-scope cursor-pointer badge hover:visible"
-			on:click={() => addToCart(product, 1)}
-		>
+		<!-- svelte-ignore a11y-click-events-have-key-events -->
+		<div class="group-2 cursor-pointer badge hover:visible" on:click={() => addToCart(product, 1)}>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				class="inline-block h-10 w-10 relative z-10"
@@ -35,9 +33,9 @@
 				/>
 			</svg>
 			<span
-				class="w-0 left-0 bg-lightGray absolute ease-out duration-100 transition-all rounded-full group-scope-hover:w-full group-scope-hover:h-full"
+				class="w-0 left-0 bg-lightGray absolute ease-out duration-100 transition-all rounded-full [.group-2:hover_&]:w-full [.group-2:hover_&]:h-full"
 			/>
-			<span class="invisible relative pr-2 z-10 group-scope-hover:visible"
+			<span class="invisible relative pr-2 z-10 [.group-2:hover_&]:visible"
 				>{$t('button.add_to_cart')}</span
 			>
 		</div>

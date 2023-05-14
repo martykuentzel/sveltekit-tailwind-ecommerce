@@ -21,7 +21,7 @@
 			<CartItemDetails {item} />
 		</div>
 	{/each}
-	<div class="border-b-2 border-lightGray " />
+	<div class="border-b-2 border-lightGray" />
 
 	<div class="flex my-8 grid grid-cols-5 text-xl">
 		<div class="col-span-5 md:col-span-3">
@@ -37,6 +37,3 @@
 		</button>
 	</div>
 </div>
-
-<style>
-</style>
